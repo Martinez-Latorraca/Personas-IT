@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background-color: #b4f1d3;
+    }
+    p {
+      margin: auto 10% auto 10%;
+      text-align: justify;
+      line-height: 1.5;
+    }
+    img {
+      margin-bottom: 30px;
+    }
+  </style>
+  <body>
+    <h1>Desafio 2</h1>
+    <p>
+      Para ver las respuestas de las preguntas 1 y 3 abir la consola en las
+      devtools pulsando F12 tanto en Firefox o Chrome
+    </p>
+    <h3>Pregunta 1</h3>
+    <p>
+      Aquí, lo que hice fue pasar el string dado por el ChatGPT para saber en
+      qué base estaba codificado. Luego de saber que esta en Base64, aplique la
+      función atob() que lo que hace es decodificar strings que están
+      codificados en Base64 (puede ser mediante btoa). Primero se convierte el
+      texto en array de caracteres decodificados en el [...atob(text)].map y
+      después se crea una matriz de bytes, mediante la función Uint8Array. Todo
+      esto para utilizar la función TextDecoder para poder decodificar en utf-8
+      y obtener los acentos.
+    </p>
+    <h3>Codigo:</h3>
+    <pre>
+        function decoder(text) { 
+            const textArray = new Uint8Array(
+            [...atob(text)].map((char) => char.charCodeAt(0)) ); 
+            const decodedText = new TextDecoder().decode(textArray); 
+            console.log(decodedText);
+        }
+    </pre>
+    <h3>Pregunta 2</h3>
+
+    <img src="img/Log.jpeg" alt="" />
+
+    <p>
+      Según la documentación oficial de Microsoft, el error 945 es debido a que
+      la base de datos no puede acceder a sus archivos o los recursos se
+      perdieron. Esto puede deberse a diferentes causas, tales como: Falta de
+      espacio en el disco duro, ataques de malware, cierre inadecuado de la base
+      de datos, corrupción de los logs de la base de datos cuando se está
+      queriendo recuperar, entre otros.
+    </p>
+    <h3>Pregunta 3</h3>
+    <p>
+      Este es un ejemplo de la secuencia de fibonacci, con la diferencia que
+      empieza en 1 y continua con 1.618 y sigue con la secuencia "i-2 + i-1"
+    </p>
+    <pre>
+        function riddle(num) {
+            const res = [1, 1.618];
+          
+            for (let i = 0; res.length < num; i++) {
+              const element = res[i] + res[i + 1];
+              res.push(+element.toFixed(3)); 
+            }
+            console.log(res);
+            return res;
+          }
+    </pre>
+    <script src="/desafio_dos.js"></script>
+  </body>
+</html>
