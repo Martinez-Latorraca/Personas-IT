@@ -9,6 +9,8 @@ Antes de ejecutar la app:
 
 Ejercicios:
 
+    * El desafio 3 se pueden ver los archivos SQL y las imagenes en la carpeta llamada Desafio 3 en el src de la app. 
+
     * Para los ejercicios del desafio 4 elegi realizarlos en React porque es el framework que mas domino. Cree una web app que contiene todos los ejercicios separados 
     en cards. Cada uno esta desarrollado en un componente independiente. Utilice CSS vanila para el diseño. 
 
