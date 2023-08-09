@@ -14,13 +14,13 @@ function BuscarValor() {
   };
 
   return (
-    <div className="card">
+    <div className="card card-1">
       <form onSubmit={buscar}>
         <div className="container">
           <label htmlFor="list">
             Ingrese una lista de números, separados por espacios:{" "}
           </label>
-          <textarea
+          <input
             className="input"
             name="list"
             id="list"
@@ -28,7 +28,7 @@ function BuscarValor() {
             rows="10"
             onChange={(e) => setList(e.target.value)}
             required
-          ></textarea>
+          ></input>
         </div>
         <div className="container">
           <label htmlFor="value">Ingrese un valor a buscar: </label>

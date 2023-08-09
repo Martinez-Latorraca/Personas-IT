@@ -13,7 +13,7 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  margin: 16px;
+
   gap: 16px;
 }
 
@@ -25,12 +25,26 @@ body {
   padding: 16px 16px;
   border-radius: 8px;
 }
-.card:nth-child(1) {
+.card-1 {
   background-color: #e4d3f83f;
 }
 
-.card:nth-child(2) {
-  background-color: #d9f8d33f;
+.card-2 {
+  background-color: #d3e3f83f;
+}
+
+.card h4 {
+  margin-bottom: 0;
+}
+.card h5 {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .btn {
@@ -52,6 +66,7 @@ body {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
+  text-decoration: none;
 }
 
 .input {
@@ -67,10 +82,32 @@ body {
   display: block;
   height: 36px;
 }
+
 .input:hover {
   border-color: #ccc;
 }
+
 .input:focus {
   border-color: #9147ff;
   background: #fff;
+}
+
+.weather-card {
+  align-self: center;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 16px;
+  gap: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  padding: 16px 16px;
+  border-radius: 8px;
+  background-color: #f8e9d33f;
+}
+
+.weather-card p {
+  margin: 0;
 }
